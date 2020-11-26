@@ -2,8 +2,16 @@ FROM hasura/graphql-engine:v1.2.1.cli-migrations-v2
 
 # Enable the console
 ENV HASURA_GRAPHQL_ENABLE_CONSOLE=true
+
+# This has to be set or auto-applying migrations fails. Don't know why.
 ENV HASURA_GRAPHQL_CLI_ENVIRONMENT=default
+
+# Set the name of the env variabla that will be used for the database url.
+# This has to be set for auto migrations to work on Heroku, as the app needs to
+# know which database to apply the migrations to during deploy phase
 ENV HASURA_GRAPHQL_MIGRATIONS_DATABASE_ENV_VAR=DATABASE_URL
+
+# Copy the migration files into the docker image
 COPY ./db/migrations /hasura-migrations/
 COPY ./db/metadata /hasura-metadata/
 
