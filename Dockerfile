@@ -15,6 +15,13 @@ ENV HASURA_GRAPHQL_MIGRATIONS_DATABASE_ENV_VAR=DATABASE_URL
 COPY ./db/migrations /hasura-migrations/
 COPY ./db/metadata /hasura-metadata/
 
+WORKDIR /
+
+# Run the image as a non-root user
+RUN adduser -D appuser
+USER appuser
+
+
 # Change $DATABASE_URL to your heroku postgres URL if you're not using
 # the primary postgres instance in your app
 CMD graphql-engine \
