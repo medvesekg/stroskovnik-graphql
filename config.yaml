@@ -1,5 +1,4 @@
 version: 2
-endpoint: https://stroskovnik-graphql-test.herokuapp.com
 metadata_directory: metadata
 actions:
   kind: synchronous
