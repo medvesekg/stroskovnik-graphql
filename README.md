@@ -9,6 +9,6 @@ To configure:
 2. Set variables in env
 3. docker-compose up -d
 4. Visit localhost:8080
-5. Connect to databse - use environment variable PG_DATABASE_URL
+5. Connect to databse - use environment variable PG_DATABASE_URL (Important: name the database `default`)
 6. In this folder run `hasura deploy`
 
