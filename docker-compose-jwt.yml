@@ -1,0 +1,8 @@
+version: "3.6"
+services:
+  graphql-engine:
+    environment:
+      ## uncomment next line to set an admin secret
+      HASURA_GRAPHQL_ADMIN_SECRET: ${HASURA_GRAPHQL_ADMIN_SECRET}
+      ## uncomment if using jwt auth
+      HASURA_GRAPHQL_JWT_SECRET: ${HASURA_GRAPHQL_JWT_SECRET}
