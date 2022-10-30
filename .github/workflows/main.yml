@@ -16,5 +16,6 @@ jobs:
         KEY: ${{ secrets.SSH_KEY }}
         script: |
           cd sites/stroskovnik-graphql
+          git pull
           docker compose build
           docker compose restart
